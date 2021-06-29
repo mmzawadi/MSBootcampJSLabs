@@ -7,7 +7,10 @@ export class GoogleBookService {
     }
 
     fetchBooks = async (term) => {
-        throw new Error("not yet implemented");
+        const results = await this.__axios(this.url + term);
+        const body =  results.data;
+        this.fetchedResults = body;
+        return body;
     }
     
 }

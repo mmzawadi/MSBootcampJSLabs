@@ -33,23 +33,30 @@ describe("GoogleBookService", function () {
     });
 
     it(`should call __axios with 'https://www.googleapis.com/books/v1/volumes?q=test' when fetchBooks is called with 'test' `, async function () {
-      fail('Implement test');
+      const res = await googleBookService.fetchBooks("test")
+      expect(googleBookService.__axios).toHaveBeenCalledWith("https://www.googleapis.com/books/v1/volumes?q=test");
     });
 
     it("should return the data property from the promised json response from __axios when fetchBooks is called", async function () {
-      fail('Implement test');
+      const res = await googleBookService.fetchBooks("test")
+      expect(res).toEqual(testObject.data)
     });
 
     it("should set the value of fetchedResults to the the data property from the promised json response from __axios when fetchBooks is called", async function () {
-      fail('Implement test');
+      const res = await googleBookService.fetchBooks("test")
+      expect(googleBookService.fetchedResults).toEqual(testObject.data)
     });
 
     it("should set the value of fetchedResults to the the data property from the promised json response from  __axios when fetchBooks is called", async function () {
-      fail('Implement test');
+      googleBookService.fetchBooks("test")
+        .then((result) => {
+          expect(googleBookService.fetchedResults).toEqual(testObject.data)
+        });
     });
 
     it("should use the parameter value in fetchBooks as the query term q in the call to axios", function () {
-        fail('Implement test');
+      googleBookService.fetchBooks("test")
+      expect(googleBookService.__axios).toHaveBeenCalledWith("https://www.googleapis.com/books/v1/volumes?q=test");
     });
 
   })
