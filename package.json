@@ -5,11 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "jasmine",
-    "doIt": "node index.js"
+    "transpile": "npx babel ./ --out-dir dist --source-maps inline --ignore \"dist/*\",\"lib/*\",\"spec/*\",\"node_modules/*\",\"bundle.js\",\"index.js\"",
+    "start": "npm run transpile && node index.js"
   },
   "author": "Marshay",
   "license": "ISC",
   "dependencies": {
-    "jasmine": "^3.6.3"
+    "jasmine": "^3.6.3",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11"
   }
 }
