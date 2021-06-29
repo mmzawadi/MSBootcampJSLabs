@@ -57,4 +57,16 @@ describe("Player", function() {
       }).toThrowError("song is already playing");
     });
   });
+
+  it("tells the current song if the user has made it a favorite and sets the value on the Song's is favorite field", function() {
+    spyOn(song, 'persistFavoriteStatus').and.callThrough();
+
+    player.play(song);
+    player.makeFavorite();
+
+    expect(song.persistFavoriteStatus).toHaveBeenCalledWith(true);
+    expect(song.isFavorite).toEqual(true)
+  });
+  
 });
+ 
