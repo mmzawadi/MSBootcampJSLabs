@@ -11,6 +11,7 @@
   "author": "Marshay",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "jasmine": "^3.6.3",
     "regenerator-runtime": "^0.13.7"
   },
