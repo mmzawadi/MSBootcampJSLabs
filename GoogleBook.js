@@ -7,8 +7,11 @@ function GoogleBook() {
 }
 
 GoogleBook.prototype.googleBookItemMapper = function (googleBookItem) {
-  // something complicated
-  throw new Error("not yet implemented");
+ this.description = googleBookItem.volumeInfo.description;
+  this.title = googleBookItem.volumeInfo.title;
+  this.author = googleBookItem.volumeInfo.authors;
+  this.publishedDate = googleBookItem.volumeInfo.publishedDate;
+  this.thumbnail = googleBookItem.volumeInfo.imageLinks.thumbnail;
 }
 
 module.exports = GoogleBook;
