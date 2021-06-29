@@ -1,0 +1,46 @@
+<script src="bundle.js"></script>
+
+
+<html>
+<style type="text/css">
+
+</style>
+
+<body>
+    <div>
+        <div>
+            <h1>Google Books</h1>
+        </div>
+        <form onsubmit="return fetchBook()">
+            <div>
+                <input id="searchText" name="query" placeholder="Search" />
+                <button id="searchButton" type="submit">Search</button>
+            </div>
+        </form>
+        <div id="navigation">
+            <button id="previous"> Previous </button>
+            <button id="next"> Next </button>
+            <span>Page: <select id="pageNumber"></select></span>
+        </div>
+        <div id="searchResults" style="margin-top: 20px;">
+            <img id="myThumbNail" src="" width="150px" style="float: left; margin-right: 10px;"></img>
+            <strong><span id="title" >Title</span></strong>
+            <br>
+            <span id="authors">Author</span>
+            <br>
+            <i><span id="year">year</span></i>
+            <br>
+            <span id="description">
+                description
+            </span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        
+        const bookService = new myModule.googleBookSvc.GoogleBookService();
+        let book = new myModule.GoogleBook();
+     
+    </script>
+</body>
+
+</html>

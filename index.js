@@ -22,5 +22,7 @@ const service = new googleBookSvc.GoogleBookService();
 service.fetchBooks("Cats");
 setTimeout(function(){ console.log(service.fetchedResults); }, 1000);
 
+module.exports = {googleBookSvc, GoogleBook}
+
 
 

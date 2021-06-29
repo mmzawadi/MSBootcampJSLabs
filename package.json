@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jasmine",
     "transpile": "npx babel ./ --out-dir dist --source-maps inline --ignore \"dist/*\",\"lib/*\",\"spec/*\",\"node_modules/*\",\"bundle.js\",\"index.js\"",
-    "start": "npm run transpile && node index.js"
+    "start": "npm run transpile && node index.js",
+    "build": "npm run transpile && browserify index.js --debug --standalone myModule > bundle.js"
   },
   "author": "Marshay",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/preset-env": "^7.12.11"
+    "@babel/preset-env": "^7.12.11",
+    "browserify": "^17.0.0"
   }
 }
